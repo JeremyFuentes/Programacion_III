@@ -14,8 +14,9 @@ public class Conexion {
     private final String PASSWORD = "1234";
 
     public Connection connection;
+    public static Conexion singleConnection;
 
-    public Conexion() {
+    private Conexion() {
         this.connection = null;
     }
 
@@ -39,4 +40,11 @@ public class Conexion {
              JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }
+    
+    public static Conexion getInstance(){
+        if(singleConnection == null) {
+            singleConnection = new Conexion();
+        }
+        return singleConnection;
+    } 
 }
