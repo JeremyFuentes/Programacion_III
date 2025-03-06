@@ -11,7 +11,7 @@ package presentacion;
 
 import java.awt.Color;
 import java.awt.Graphics;
-
+import javax.swing.JDesktopPane;
 
 public class FmPrincipal extends javax.swing.JFrame {
 
@@ -173,12 +173,12 @@ public class FmPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 796, Short.MAX_VALUE)
+                .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 1600, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
 
         pack();
@@ -187,6 +187,11 @@ public class FmPrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         FrmCategoria frmCategoria = new FrmCategoria();
         escritorio.add(frmCategoria);
+        try {
+            frmCategoria.setMaximum(true); // Hace que el JInternalFrame ocupe todo el espacio
+        } catch (java.beans.PropertyVetoException e) {
+            e.printStackTrace();
+        }
         frmCategoria.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 

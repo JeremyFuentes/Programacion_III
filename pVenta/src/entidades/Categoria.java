@@ -13,8 +13,13 @@ public class Categoria {
     private String nombre;
     private String descripcion;
     private boolean activo;
-    
+
     public Categoria() {
+    }
+
+    public Categoria(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
     }
     
     public Categoria(int id, String nombre, String descripcion, boolean activo) {
